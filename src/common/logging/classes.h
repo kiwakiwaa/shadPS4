@@ -31,6 +31,7 @@ constexpr auto Lib = "Lib";                                         ///< HLE imp
 constexpr auto Lib_Ajm = "Lib.Ajm";                                 ///< The LibSceAjm implementation.
 constexpr auto Lib_AppContent = "Lib.AppContent";                   ///< The LibSceAppContent implementation.
 constexpr auto Lib_Audio3d = "Lib.Audio3d";                         ///< The LibSceAudio3d implementation.
+constexpr auto Lib_AudiodecCpu = "Lib.AudiodecCpu";                 ///< The LibSceAudiodecCpu implementation
 constexpr auto Lib_AudioIn = "Lib.AudioIn";                         ///< The LibSceAudioIn implementation.
 constexpr auto Lib_AudioOut = "Lib.AudioOut";                       ///< The LibSceAudioOut implementation.
 constexpr auto Lib_AvPlayer = "Lib.AvPlayer";                       ///< The LibSceAvPlayer implementation.

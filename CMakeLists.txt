@@ -306,6 +306,11 @@ set(AUDIO_LIB src/core/libraries/audio/audioin.cpp
               src/core/libraries/audio3d/audio3d_error.h
 )
 
+set(AUDIODEC_CPU_LIB src/core/libraries/audiodec_cpu/audiodec_cpu.cpp
+                     src/core/libraries/audiodec_cpu/audiodec_cpu.h
+                     src/core/libraries/audiodec_cpu/audiodec_cpu_error.h
+)
+
 set(GNM_LIB src/core/libraries/gnmdriver/gnmdriver.cpp
             src/core/libraries/gnmdriver/gnmdriver.h
             src/core/libraries/gnmdriver/gnmdriver_init.h
@@ -836,6 +841,7 @@ set(CORE src/core/aerolib/stubs.cpp
          ${AJM_LIB}
          ${AVPLAYER_LIB}
          ${AUDIO_LIB}
+         ${AUDIODEC_CPU_LIB}
          ${GNM_LIB}
          ${KERNEL_LIB}
          ${NETWORK_LIBS}

@@ -7,6 +7,7 @@
 #include "core/libraries/audio/audioout.h"
 #include "core/libraries/audio3d/audio3d.h"
 #include "core/libraries/audio3d/audio3d_openal.h"
+#include "core/libraries/audiodec_cpu/audiodec_cpu.h"
 #include "core/libraries/avplayer/avplayer.h"
 #include "core/libraries/camera/camera.h"
 #include "core/libraries/companion/companion_httpd.h"
@@ -87,6 +88,7 @@ void InitHLELibs(Core::Loader::SymbolsResolver* sym) {
     Libraries::CommonDialog::RegisterLib(sym);
     Libraries::MsgDialog::RegisterLib(sym);
     Libraries::AudioOut::RegisterLib(sym);
+    Libraries::AudiodecCpu::RegisterLib(sym);
     Libraries::Http::RegisterLib(sym);
     Libraries::Http2::RegisterLib(sym);
     Libraries::Net::RegisterLib(sym);
