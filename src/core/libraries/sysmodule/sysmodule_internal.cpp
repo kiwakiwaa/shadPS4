@@ -7,6 +7,7 @@
 #include "core/emulator_settings.h"
 #include "core/file_sys/fs.h"
 #include "core/libraries/audiodec_cpu/audiodec_cpu.h"
+#include "core/libraries/audiodec_cpu/audiodec_cpu_hevag.h"
 #include "core/libraries/avplayer/avplayer.h"
 #include "core/libraries/disc_map/disc_map.h"
 #include "core/libraries/font/font.h"
@@ -236,7 +237,7 @@ s32 loadModuleInternal(s32 index, s32 argc, const void* argv, s32* res_out) {
              {"libSceAudiodecCpuDtsHdMa.sprx", nullptr},
              {"libSceAudiodecCpuLpcm.sprx", nullptr},
              {"libSceAudiodecCpuDtsHdLbr.sprx", nullptr},
-             {"libSceAudiodecCpuHevag.sprx", nullptr},
+             {"libSceAudiodecCpuHevag.sprx", &Libraries::AudiodecCpu::Hevag::RegisterLib},
              {"libSceAudiodecCpuAlac.sprx", nullptr},
              {"libSceAudiodecCpuFlac.sprx", nullptr},
              {"libSceFont.sprx", &Libraries::Font::RegisterLib},

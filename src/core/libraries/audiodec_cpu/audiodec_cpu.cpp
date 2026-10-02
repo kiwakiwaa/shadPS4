@@ -7,6 +7,7 @@
 #include "core/libraries/audiodec_cpu/audiodec_cpu.h"
 #include "core/libraries/audiodec_cpu/audiodec_cpu_backend.h"
 #include "core/libraries/audiodec_cpu/audiodec_cpu_error.h"
+#include "core/libraries/audiodec_cpu/audiodec_cpu_hevag.h"
 #include "core/libraries/libs.h"
 
 namespace Libraries::AudiodecCpu {
@@ -30,7 +31,8 @@ constexpr std::array CodecInfos{
     CodecInfo{OrbisAudiodecCpuCodec::DtsHdLbr, "DTS HD LBR", "libSceAudiodecCpuDtsHdLbr",
               "nR0nX7p2jFo"},
     CodecInfo{OrbisAudiodecCpuCodec::Ddp, "DDP", "libSceAudiodecCpuDdp", "xqlFMfkztKg"},
-    CodecInfo{OrbisAudiodecCpuCodec::Hevag, "HEVAG", "libSceAudiodecCpuHevag", "lYA31T9O1KU"},
+    CodecInfo{OrbisAudiodecCpuCodec::Hevag, "HEVAG", "libSceAudiodecCpuHevag", "lYA31T9O1KU",
+              &Hevag::Ops},
     CodecInfo{OrbisAudiodecCpuCodec::Alac2, "ALAC2", "libSceAudiodecCpuAlac", "ZEH+UsL9PFQ"},
     CodecInfo{OrbisAudiodecCpuCodec::Flac2, "FLAC2", "libSceAudiodecCpuFlac", "WkjdgojiCdQ"},
 };

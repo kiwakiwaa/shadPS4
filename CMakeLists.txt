@@ -290,6 +290,15 @@ set(AJM_LIB src/core/libraries/ajm/ajm.cpp
             src/core/libraries/ajm/ajm_mp3.h
 )
 
+# Keep HEVAG multiply/add operations separate to match the LLE's rounding.
+if (CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "MSVC")
+    set_source_files_properties(src/core/libraries/audiodec_cpu/audiodec_cpu_hevag.cpp
+        PROPERTIES COMPILE_OPTIONS "/clang:-ffp-contract=off")
+else()
+    set_source_files_properties(src/core/libraries/audiodec_cpu/audiodec_cpu_hevag.cpp
+        PROPERTIES COMPILE_OPTIONS "-ffp-contract=off")
+endif()
+
 set(AUDIO_LIB src/core/libraries/audio/audioin.cpp
               src/core/libraries/audio/audioin.h
               src/core/libraries/audio/audioin_backend.h
@@ -303,6 +312,8 @@ set(AUDIO_LIB src/core/libraries/audio/audioin.cpp
               src/core/libraries/audiodec_cpu/audiodec_cpu_backend.h
               src/core/libraries/audiodec_cpu/audiodec_cpu.h
               src/core/libraries/audiodec_cpu/audiodec_cpu_error.h
+              src/core/libraries/audiodec_cpu/audiodec_cpu_hevag.cpp
+              src/core/libraries/audiodec_cpu/audiodec_cpu_hevag.h
               src/core/libraries/audio/audioout.h
               src/core/libraries/audio/audioout_backend.h
               src/core/libraries/audio/audioout_error.h
